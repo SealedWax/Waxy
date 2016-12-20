@@ -1,0 +1,44 @@
+// Sealed Wax® · Waxy expansion pack
+// with CSS pseudo-events & attribute property
+// http://code.SealedWax.com/
+//
+// Copyright 2016, Unisus® the Victor Antago, god of gravity
+// Free to use and abuse under the MIT license.
+// http://www.opensource.org/licenses/mit-license.php
+
+// Default styles
+.parent {
+	background: #0f0;
+	padding: 10px;
+	.child {
+		background: #999;
+		padding: 10px;
+		color: #fff;
+	}
+}
+
+.son.child {
+	attribute: class loaded on; // Init class
+	// Rebel Attack attributes with new classes
+	&:mouseover {
+		background: #00f; // Mouseover color
+		^ .parent {
+			attribute: class active on;
+		}
+	}
+	&:mouseout {
+		background: #999; // Mouseout color
+		^ .parent {
+			attribute: class active off;
+		}
+	}
+	// Rebel Contaminate background permanently upon click
+	&:click {
+		^ body ^ .cousin {
+			background: #f00;
+		}
+	}
+	.parent.active & {
+		background: #000 !important;
+	}
+}
